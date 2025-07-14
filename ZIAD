@@ -1,0 +1,55 @@
+
+✅ Here's the Right Way to Publish Your HTML on GitHub Pages:
+🛠 STEP 1: Upload Your index.html File
+Go to your GitHub repository (example: https://github.com/kirubeladugna/ziad-marketing)
+
+Click the "Add file" button > then click "Upload files"
+
+Drag and drop your index.html file
+
+Scroll down — in the Commit changes section:
+
+Add a message like: Add homepage
+
+Click the green "Commit changes" button
+
+🌐 STEP 2: Enable GitHub Pages
+Go to your repository’s homepage
+
+Click the “⚙️ Settings” tab (top-right)
+
+On the left sidebar, scroll down to Pages (or type pages in the search bar)
+
+Under “GitHub Pages” > “Source”, do this:
+
+Select main as the branch
+
+Select / (root) as the folder
+
+Click “Save”
+
+✅ After 30–60 seconds, your site will be published at:
+
+php-template
+Copy
+Edit
+https://<your-username>.github.io/<repo-name>/
+For example:
+
+arduino
+Copy
+Edit
+https://kirubeladugna.github.io/ziad-marketing/
+❗ If You Don't See the "Save" Button
+Make sure:
+
+You already committed at least one file (index.html)
+
+The repository is public (GitHub Pages doesn’t work on private repos unless you're on Pro)
+
+You're in the correct repo settings, under the Pages section
+
+👇 Want me to help generate the .zip file for you?
+I can package everything for upload, just say: "Zip it for me", and I’ll send you the downloadable version.
+
+Let me know if you want a logo, favicon, or even to link the contact form with email
