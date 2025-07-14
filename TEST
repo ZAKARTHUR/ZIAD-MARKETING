@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ZIAD Digital Marketing Agency</title>
+<style>
+  /* Reset */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #fff; color: #222;
+    line-height: 1.6;
+  }
+  a {
+    color: #5C4033;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  /* Container */
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  /* Header / Hero */
+  header {
+    height: 90vh;
+    background: #111; /* solid color instead of image */
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+  }
+  header h1 {
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 3px 6px rgba(0,0,0,0.5);
+  }
+  header p {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+  }
+  header a.cta-btn {
+    background-color: #5C4033;
+    color: #fff;
+    padding: 15px 40px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    box-shadow: 0 6px 12px rgba(92,64,51,0.6);
+    transition: background-color 0.3s ease;
+  }
+  header a.cta-btn:hover {
+    background-color: #3f2c21;
+  }
+  /* Services */
+  section.services {
+    background: #f6f1eb;
+    padding: 60px 20px;
+  }
+  section.services h2 {
+    text-align: center;
+    color: #5C4033;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+  }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+    gap: 35px;
+  }
+  .service-card {
+    background: #fff;
+    border-radius: 15px;
+    padding: 30px 25px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    cursor: default;
+  }
+  .service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+  }
+  .service-icon {
+    font-size: 50px;
+    color: #5C4033;
+    margin-bottom: 20px;
+  }
+  .service-card h3 {
+    color: #5C4033;
+    margin-bottom: 15px;
+    font-weight: 700;
+  }
+  .service-card p {
+    color: #4a4a4a;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  /* Testimonials */
+  section.testimonials {
+    padding: 60px 20px;
+    max-width: 1000px;
+    margin: 0 auto 80px;
+  }
+  section.testimonials h2 {
+    text-align: center;
+    color: #5C4033;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+  }
+  .testimonial-slider {
+    position: relative;
+    overflow: hidden;
+  }
+  .testimonial-track {
+    display: flex;
+    transition: transform 0.5s ease;
+  }
+  .testimonial {
+    background: #f6f1eb;
+    border-left: 5px solid #5C4033;
+    padding: 30px 25px;
+    margin: 0 15px;
+    border-radius: 10px;
+    flex: 0 0 300px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .testimonial-text {
+    font-style: italic;
+    color: #444;
+    margin-bottom: 15px;
+  }
+  .testimonial-client {
+    font-weight: 700;
+    color: #5C4033;
+    font-size: 1rem;
+  }
+  /* Portfolio */
+  section.portfolio {
+    padding: 60px 20px;
+    background: #fff;
+  }
+  section.portfolio h2 {
+    text-align: center;
+    color: #5C4033;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+  }
+  .portfolio-grid {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+  }
+  .portfolio-item {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    background: #f6f1eb;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+  }
+  .portfolio-item:hover {
+    transform: translateY(-8px);
+  }
+  .portfolio-title {
+    color: #5C4033;
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  .portfolio-desc {
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+  /* Contact */
+  section.contact {
+    background: #f6f1eb;
+    padding: 60px 20px;
+  }
+  section.contact h2 {
+    text-align: center;
+    color: #5C4033;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+  }
+  section.contact p.location-info {
+    text-align:center; 
+    color:#5C4033; 
+    font-weight:600; 
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+  }
+  form.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  }
+  form.contact-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #5C4033;
+  }
+  form.contact-form input,
+  form.contact-form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    resize: vertical;
+  }
+  form.contact-form button {
+    background: #5C4033;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  form.contact-form button:hover {
+    background: #3f2c21;
+  }
+  /* Footer */
+  footer {
+    background: #111;
+    color: #ccc;
+    text-align: center;
+    padding: 25px 20px;
+  }
+  footer p {
+    margin: 5px 0;
+  }
+  footer a {
+    color: #c9a66b;
+    margin: 0 10px;
+    font-size: 1.4rem;
+    vertical-align: middle;
+  }
+  footer a:hover {
+    color: #b08c4a;
+  }
+  /* Responsive */
+  @media (max-width: 768px) {
+    header h1 {
+      font-size: 2.5rem;
+    }
+    header p {
+      font-size: 1rem;
+    }
+    .testimonial-track {
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .testimonial {
+      flex: 0 0 90%;
+      margin: 0 auto 30px;
+    }
+    .services-grid,
+    .portfolio-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+<!-- FontAwesome CDN for icons -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <h1>ZIAD Digital Marketing Agency</h1>
+    <p>Advanced Digital Marketing | Meta & Google Ads Specialists</p>
+    <a href="mailto:zakmak1906@gmail.com" class="cta-btn">Book Your Free Strategy Call</a>
+  </div>
+</header>
+
+<section class="services container">
+  <h2>Our Services</h2>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon"><i class="fas fa-lightbulb"></i></div>
+      <h3>Digital Marketing Strategy</h3>
+      <p>Let’s create a clear, goal-driven plan to grow your audience and boost results.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon"><i class="fas fa-bullhorn"></i></div>
+      <h3>Paid Ads Management</h3>
+      <p>Effective ad campaigns that optimize budgets and drive measurable ROI.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon"><i class="fas fa-pen-nib"></i></div>
+      <h3>Copywriting</h3>
+      <p>I craft content and captions that connect with your audience and tell your story.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon"><i class="fas fa-pencil-alt"></i></div>
+      <h3>Content Creation & Management</h3>
+      <p>Plan, post, and engage to keep your social media platforms active and on-brand.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon"><i class="fas fa-paint-brush"></i></div>
+      <h3>Graphic Design</h3>
+      <p>Custom visuals like posts, logos, and banners to elevate your brand identity.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon"><i class="fas fa-video"></i></div>
+      <h3>Short-Form Video Editing</h3>
+      <p>Engaging, trend-savvy videos for TikTok, Instagram Reels, and YouTube Shorts.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon"><i class="fas fa-chart-line"></i></div>
+      <h3>Advertising & Campaign Management</h3>
+      <p>Effective ad campaigns that optimize budgets and drive measurable ROI.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon"><i class="fas fa-chart-pie"></i></div>
+      <h3>Analytics & Performance Monitoring</h3>
+      <p>Insights and reports to track growth and refine your strategy.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon"><i class="fas fa-network-wired"></i></div>
+      <h3>Platform Expertise</h3>
+      <p>Strategies tailored for Instagram, TikTok, Facebook, LinkedIn, and beyond.</p>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials">
+  <h2>What Our Clients Say</h2>
+  <div class="testimonial-slider container" id="testimonial-slider">
+    <div class="testimonial-track" id="testimonial-track">
+      <div class="testimonial">
+        <p class="testimonial-text">“ZIAD helped our boutique gain more foot traffic and sales within two weeks. Their professional approach is clear and results-driven.”</p>
+        <div class="testimonial-client">Hanna T. – Boutique Owner</div>
+      </div>
+      <div class="testimonial">
+        <p class="testimonial-text">“Their Instagram ads brought new customers to our café fast. The process was smooth and the results visible.”</p>
+        <div class="testimonial-client">Mekdes Y. – Café Owner</div>
+      </div>
+      <div class="testimonial">
+        <p class="testimonial-text">“ZIAD turned our unstructured boosting into a targeted strategy that brought real engagement and sales.”</p>
+        <div class="testimonial-client">Abel K. – Electronics Manager</div>
+      </div>
+      <div class="testimonial">
+        <p class="testimonial-text">“From setup to results, ZIAD managed our Facebook ads professionally and efficiently.”</p>
+        <div class="testimonial-client">Yonas G. – Car Rental Owner</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="portfolio container">
+  <h2>Recent Campaigns</h2>
+  <div class="portfolio-grid">
+    <div class="portfolio-item">
+      <h3 class="portfolio-title">Local Café Instagram Ads</h3>
+      <p class="portfolio-desc">Boosted social engagement and increased new customers by 40% in 1 month.</p>
+    </div>
+    <div class="portfolio-item">
+      <h3 class="portfolio-title">Retail Store Facebook Campaign</h3>
+      <p class="portfolio-desc">Generated 200+ new inquiries, improving conversion rates by 25%.</p>
+    </div>
+    <div class="portfolio-item">
+      <h3 class="portfolio-title">Service Business Lead Generation</h3>
+      <p class="portfolio-desc">Implemented Google Ads, doubling leads in 6 weeks with a low cost per click.</p>
+    </div>
+  </div>
+</section>
+
+<section class="contact">
+  <h2>Contact Us</h2>
+  <p class="location-info">Serving Clients in Addis Ababa & Bahirdar</p>
+  <form class="contact-form" action="#" method="POST" id="contact-form">
+    <label for="name">Full Name</label>
+    <input type="text" id="name" name="name" placeholder="Your full name" required />
+
+    <label for="email">Email Address</label>
+    <input type="email" id="email" name="email" placeholder="you@example.com" required />
+
+    <label for="message">Your Message</label>
+    <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+
+<footer>
+  <p>&copy; 2025 ZIAD Digital Marketing Agency | Based in Addis Ababa | Serving Addis Ababa & Bahirdar</p>
+  <p>
+    <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+    <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+  </p>
+</footer>
+
+<script>
+  // Simple testimonial slider (auto slide every 5 seconds)
+  const track = document.getElementById('testimonial-track');
+  let index = 0;
+  const testimonialCount = track.children.length;
+
+  function showTestimonial(i) {
+    const width = track.children[0].offsetWidth + 30; // 30 for margin (15 left+right)
+    track.style.transform = `translateX(-${i * width}px)`;
+  }
+
+  function nextTestimonial() {
+    index++;
+    if (index >= testimonialCount) index = 0;
+    showTestimonial(index);
+  }
+
+  setInterval(nextTestimonial, 5000);
+</script>
+
+<!-- FontAwesome CDN for icons -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html>
